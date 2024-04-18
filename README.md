@@ -1,32 +1,18 @@
-# Daily Schedule for OS Tutorial Summer of Code 2020
+# Daily Record for OS Training Summer 2024
 
-- daily_documents：每日笔记
-- part1-exercises-for-rust：rust的一些小练习
-- practice：rust写的一些小程序
-- labs：rCore的lab
+## 本仓库是 fork 自 https://github.com/yunwei37/os-summer-of-code-daily 大佬的，
+## 删除了原来的文档，替换成自己的记录。保留的部分是为了对照有哪些知识点缺漏，补习之后会删掉
 
-在此阶段实现的简易操作系统仓库：[https://github.com/yunwei37/MyrCore](https://github.com/yunwei37/MyrCore)
 
-后续将会继续完善。
-
-可供检查的具体实现目录：
-
-- [rCore labs](labs)
-- [rust practices](part1-exercises-for-rust)
-
-zCore 开发的最终报告：[https://github.com/yunwei37/zcore_migration_notes/blob/master/report.md](https://github.com/yunwei37/zcore_migration_notes/blob/master/report.md)
-
-## TOC
-
-*七月*
+*四月*
 
 | Mon               | Tues              | Wed                          | Thur                         | Fri                          | Sat               | Sun               |
 | ----------------- | ----------------- | ---------------------------- | ---------------------------- | ---------------------------- | ----------------- | ----------------- |
-|                   |                   | 1 <br> ([D1](#day-1-202071)) | 2 <br> ([D2](#day-2-202072)) | 3 <br> ([D3](#day-3-202073)) | 4 <br> ([D4](#day-4-202074)) | 5 <br> ([D5](#day-5-202075)) |
-| 6 <br> ([D6](#day-6-202076)) | 7 <br> ([D7](#day-7-202077)) | 8 <br> ([D8](#day-8-202078))            | 9 <br> ([D9](#day-9-202079))            | 10 <br> ([D10](#day-10-2020710))         | 11  <br>  ([D11](#day-11-2020711))             | 12      <br>    ([D12](#day-12-2020712))       |
-| 13    <br>    ([D13](#day-13-2020713))             | 14         <br>    ([D14](#day-14-2020711))        | 15        <br>    ([D15](#day-15-2020715))                    | 16    <br>     ([D16](#day-16-2020716))                       | 17    <br>      ([D17](#day-17-2020717))                       | 18    <br>    ([D18](#day-18-2020718))            | 19   <br>     ([D19](#day-19-2020719))            |
-| 20   <br>    ([D20](#day-20-2020720))            | 21       <br>    ([D21](#day-21-2020721))         | 22     <br>    ([D22](#day-22-2020722))                         | 23     <br>    ([D23](#day-23-2020723))                         | 24    <br>    ([D24](#day-24-2020724))                        | 25      <br>    ([D25](#day-25-2020725))             | 26         <br>    ([D26](#day-26-2020726))           |
-| 27         <br>    ([D27](#day-27-2020727))           | 28       <br>    ([D28](#day-28-2020728))           | 29         <br>    ([D29](#day-29-2020729))                    | 30        <br>    ([D30](#day-30-2020730))                     |      <br>    ([D31](#day-31-2020731))                           |                   |                   |
+| 1 <br> ([D1](#day-1-202071)) | 2 <br> ([D2](#day-2-202072)) | 3 <br> ([D3](#day-3-202073)) | 4 <br> ([D4](#day-4-202074)) | 5 <br> ([D5](#day-5-202075)) |6 <br> ([D6](#day-6-202076)) | 7 <br> ([D7](#day-7-202077)) |    
+| 8 <br> ([D8](#day-8-202078))| 9 <br> ([D9](#day-9-202079))            | 10 <br> ([D10](#day-10-2020710))         | 11  <br>  ([D11](#day-11-2020711))             | 12      <br>    ([D12](#day-12-2020712))       | 13    <br>    ([D13](#day-13-2020713))             | 14         <br>    ([D14](#day-14-2020711))        |
+| 15        <br>    ([D15](#day-15-2020715))                    | 16    <br>     ([D16](#day-16-2020716))                       | 17    <br>      ([D17](#day-17-2020717))                       | 18    <br>    ([D18](#day-18-2020718))            | 19   <br>     ([D19](#day-19-2020719))| 20   <br>    ([D20](#day-20-2020720))            | 21       <br>    ([D21](#day-21-2020721))         |
+| 22     <br>    ([D22](#day-22-2020722))                         | 23     <br>    ([D23](#day-23-2020723))                         | 24    <br>    ([D24](#day-24-2020724))                        | 25      <br>    ([D25](#day-25-2020725))             | 26         <br>    ([D26](#day-26-2020726))    | 27         <br>    ([D27](#day-27-2020727))           | 28       <br>    ([D28](#day-28-2020728))           |
+| 29         <br>    ([D29](#day-29-2020729))                    | 30        <br>    ([D30](#day-30-2020730))                                 
 
 *八月*
 
@@ -42,80 +28,6 @@ zCore 开发的最终报告：[https://github.com/yunwei37/zcore_migration_notes
 ------
 
 ## Day 1 2020/7/1
-
-### 事件1：OS Tutorial Summer of Code 2020
-
-前天就在github上面看到了活动信息，然后立马就投了简历和报名表；正好一直以来就对系统相关的信息很感兴趣，也很早就看到了rcore这样一个项目，暑假也没啥别的事情，这样的好机会当然不能错过啦。（就是今天傍晚才收到回复...所以今天算第一天吧）
-
-相关的计算机原理知识大致都了解过一遍，但没有什么很好的实践；学校教的是MIPS体系结构，rust大名如雷贯耳，但也未曾上手。大概还是有挺多东西要学的。
-
-对于课程的计划时间表，也许有点希望尝试一下把这几个部分进行一定的交叉（？），从了解rust语法和RISC-V的原理开始，结合rcore labs相关的源代码阅读和一定的rust实践工作交叉进行...
-
-### 事件2：rust beginner
-
-今天大部分时间还是花在了mit的6.828上面（继续之前的学习），晚上才算是真正开始（入坑）rust。
-
-主要参考资料：[Rust 程序设计语言](https://kaisery.github.io/trpl-zh-cn/)
-
-- 安装并配置环境；换到国内源
-- Hello, World!
-- 简单的猜猜看游戏
-
-参考今日文档记录：[Day1_rust_beginner.md](daily_documents/Day1_rust_beginner.md)
-
-顺带瞻仰了一下rcore的设计论文，晚上去了一家还不错的日料店（吃到了河豚锅、海胆刺身还有很不错的土瓶烧！）
-
->rust看起来真好玩
-
-### 问题
-
-- `waiting for file lock on package cache lock` 折腾了一会，虽然解决了问题但并不很清楚其发生的原因；
-- 大概了解了一下rust的设计理念，但语法还需要更深入地学习；
-
-### 预期计划
-
-- 睡个好觉，明天继续看rust基本知识；
-- 简单了解一下 RISC-V 体系结构；
-- 翻翻rCore的论文和tutorial，大概了解一下lab是要做什么怎么做的；
-
-## Day 2 2020/7/2
-
-### 事件1：rust PL again
-
-主要参考资料：[Rust 程序设计语言](https://kaisery.github.io/trpl-zh-cn/)
-
-继续阅读 Rust程序设计语言，梳理相关语法；
-
-- 常见编程概念
-- 所有权
-- 结构体
-- 枚举、方法匹配
-- 使用包和crate
-- 集合
-- 错误处理
-- 泛型、trait 和生命周期
-
-笔记：[Day2_rust_next.md](daily_documents/Day2_rust_next.md)
-
-编程：小练习题：
-
-[Small exercises to get you used to reading and writing Rust code!](part1-exercises-for-rust/rustlings/readme.md)
-
-
-- quiz 1-4
-- variables
-- if
-- function
-- primitive_types
-- structs
-- strings
-- enums
-- tests
-- modules
-- macros
-- move_semantics
-
->晚上去吃了甲鱼生蚝火锅x
 
 ### 事件2：阅读rCore的一些参考资料
 
